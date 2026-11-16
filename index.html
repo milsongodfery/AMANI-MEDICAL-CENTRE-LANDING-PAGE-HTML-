@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amani Medical Centre | Duka la Madawa Dodoma</title>
+<meta name="description" content="Amani Medical Centre, Chako ni Chako, Dodoma. Dawa sahihi, ushauri wa mfamasia na delivery ndani ya Dodoma. Wasiliana nasi WhatsApp.">
+<!-- Tailwind CSS kupitia CDN -->
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+  /* RANGI: badilisha hapa rangi zote za tovuti */
+  tailwind.config = { theme: { extend: {
+    colors: { brand: '#1B7F5C', mint: '#F0FAF5', cta: '#F59E0B', ink: '#1F2937' },
+    fontFamily: { sans: ['system-ui','-apple-system','Segoe UI','Roboto','Arial','sans-serif'] }
+  } } }
+</script>
+<style type="text/tailwindcss">
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  /* Vitufe: urefu usiopungua 44px */
+  .btn { @apply inline-flex items-center justify-center gap-2 min-h-[48px] px-6 rounded-full font-semibold text-base transition active:scale-95; }
+  .btn-cta { @apply bg-cta text-ink hover:brightness-95; }            /* Chungwa: CTA tu */
+  .btn-out { @apply border-2 border-brand text-brand bg-white hover:bg-mint; }
+  .card { @apply bg-white rounded-2xl border border-brand/15 p-6; }
+  .h2 { @apply text-3xl sm:text-4xl font-bold text-ink tracking-tight; }
+  .sec { @apply px-5 py-16 sm:py-24; }
+  .wrap { @apply max-w-6xl mx-auto; }
+  .ico { @apply w-12 h-12 rounded-xl bg-mint flex items-center justify-center text-2xl mb-4; }
+  .fade { opacity: 0; transition: opacity .6s ease; }
+  .fade.show { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .fade { opacity: 1; transition: none; } }
+  a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid #1B7F5C; outline-offset: 2px; }
+</style>
+</head>
+<body class="font-sans text-ink bg-white text-base antialiased">
+
+<!-- ========== 1. HEADER (sticky) ========== -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-brand/10">
+  <div class="wrap flex items-center justify-between h-16 px-5">
+    <a href="#juu" class="font-bold text-lg text-brand">Amani Medical Centre</a>
+    <nav class="hidden lg:flex gap-6 text-base" aria-label="Menyu kuu">
+      <a href="#huduma" class="hover:text-brand">Huduma</a>
+      <a href="#bidhaa" class="hover:text-brand">Bidhaa</a>
+      <a href="#kwa-nini-sisi" class="hover:text-brand">Kwa Nini Sisi</a>
+      <a href="#mahali" class="hover:text-brand">Mahali</a>
+      <a href="#maswali" class="hover:text-brand">Maswali</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a data-tel href="tel:+255673639979" class="hidden sm:inline-flex items-center min-h-[44px] font-semibold text-brand px-2">+255 673 639 979</a>
+      <a data-wa href="https://wa.me/255673639979" class="btn btn-cta !min-h-[44px] !px-4 hidden sm:inline-flex">WhatsApp</a>
+      <button id="menuBtn" class="lg:hidden w-11 h-11 flex items-center justify-center rounded-lg border border-brand/20" aria-label="Fungua menyu" aria-expanded="false" aria-controls="mobileNav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- Menyu ya simu -->
+  <nav id="mobileNav" class="hidden lg:hidden border-t border-brand/10 bg-white px-5 py-3" aria-label="Menyu ya simu">
+    <a href="#huduma" class="block py-3 text-lg">Huduma</a>
+    <a href="#bidhaa" class="block py-3 text-lg">Bidhaa</a>
+    <a href="#kwa-nini-sisi" class="block py-3 text-lg">Kwa Nini Sisi</a>
+    <a href="#mahali" class="block py-3 text-lg">Mahali</a>
+    <a href="#maswali" class="block py-3 text-lg">Maswali</a>
+    <div class="flex gap-3 pt-3">
+      <a data-tel href="tel:+255673639979" class="btn btn-out flex-1">Piga Simu</a>
+      <a data-wa href="https://wa.me/255673639979" class="btn btn-cta flex-1">WhatsApp</a>
+    </div>
+  </nav>
+</header>
+
+<main id="juu">
+
+<!-- ========== 2. HERO ========== -->
+<section class="bg-mint px-5 py-16 sm:py-28">
+  <div class="wrap grid lg:grid-cols-2 gap-10 items-center">
+    <div>
+      <h1 class="text-4xl sm:text-6xl font-bold leading-tight tracking-tight text-ink">Dawa Sahihi, Huduma ya Haraka, Karibu Nawe</h1>
+      <p class="mt-5 text-lg text-ink/80 max-w-xl">Duka la madawa Dodoma lenye mfamasia mwenye leseni, ushauri wa bure na delivery nyumbani.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a data-wa href="https://wa.me/255673639979" class="btn btn-cta text-lg">Wasiliana WhatsApp</a>
+        <a data-tel href="tel:+255673639979" class="btn btn-out text-lg">Tupigie Sasa</a>
+      </div>
+    </div>
+    <!-- PICHA: weka picha ya duka lako hapa (badilisha div hii na <img src="duka.jpg" alt="..." loading="lazy">) -->
+    <div role="img" aria-label="Nafasi ya picha ya duka la Amani Medical Centre" class="aspect-[4/3] rounded-3xl bg-white border-2 border-dashed border-brand/30 flex items-center justify-center text-brand/60 text-center p-6">
+      [Weka picha ya duka au mfamasia hapa]
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3. TAARIFA ZA HARAKA ========== -->
+<section class="sec !py-12 fade">
+  <div class="wrap grid md:grid-cols-3 gap-5">
+    <div class="card">
+      <div class="ico" aria-hidden="true">🕖</div>
+      <h2 class="font-bold text-xl mb-2">Saa za Kazi</h2>
+      <!-- SAA ZA KAZI: zibadilishe hapa na kwenye sehemu ya Mahali, FAQ -->
+      <ul class="space-y-1 text-base">
+        <li><b>Jumatatu - Alhamisi:</b> 7:00 AM - 8:00 PM</li>
+        <li><b>Ijumaa:</b> 7:00 AM - 5:00 PM</li>
+        <li><b>Jumamosi na Jumapili:</b> <span class="bg-cta/20 px-1 rounded">[WEKA SAA AU "IMEFUNGWA"]</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="ico" aria-hidden="true">🛵</div>
+      <h2 class="font-bold text-xl mb-2">Delivery</h2>
+      <p>Tunapeleka dawa nyumbani ndani ya Dodoma. Oda hufanywa kupitia WhatsApp.</p>
+    </div>
+    <div class="card">
+      <div class="ico" aria-hidden="true">📍</div>
+      <h2 class="font-bold text-xl mb-2">Mahali</h2>
+      <p>Chako ni Chako, Dodoma.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 4. HUDUMA ZETU ========== -->
+<section id="huduma" class="sec bg-mint">
+  <div class="wrap">
+    <h2 class="h2">Huduma zetu</h2>
+    <p class="mt-3 text-ink/75 max-w-xl">Kila kitu cha afya ya familia yako, mahali pamoja.</p>
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <article class="card fade"><div class="ico" aria-hidden="true">📋</div><h3 class="font-bold text-lg">Prescription Medicines</h3><p class="mt-1">Dawa za maagizo ya daktari, kwa kufuata maelekezo yake.</p></article>
+      <article class="card fade"><div class="ico" aria-hidden="true">💊</div><h3 class="font-bold text-lg">Dawa za Kawaida (OTC)</h3><p class="mt-1">Dawa za kawaida zinazopatikana bila maagizo ya daktari.</p></article>
+      <article class="card fade"><div class="ico" aria-hidden="true">🩺</div><h3 class="font-bold text-lg">Vifaa vya Afya</h3><p class="mt-1">Vifaa vya kila siku vya huduma ya afya nyumbani.</p></article>
+      <article class="card fade"><div class="ico" aria-hidden="true">🩸</div><h3 class="font-bold text-lg">Vipimo vya Haraka</h3><p class="mt-1">Kipimo cha sukari na shinikizo la damu, majibu papo hapo.</p></article>
+      <article class="card fade"><div class="ico" aria-hidden="true">👩‍⚕️</div><h3 class="font-bold text-lg">Ushauri wa Mfamasia</h3><p class="mt-1">Uliza jinsi ya kutumia dawa kwa usahihi. Ushauri ni bure.</p></article>
+      <article class="card fade"><div class="ico" aria-hidden="true">👶</div><h3 class="font-bold text-lg">Mama na Mtoto</h3><p class="mt-1">Huduma na bidhaa kwa afya ya mama na mtoto.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 5. KATEGORIA ZA BIDHAA ========== -->
+<section id="bidhaa" class="sec">
+  <div class="wrap">
+    <h2 class="h2">Kategoria za bidhaa</h2>
+    <p class="mt-3 text-ink/75 max-w-xl">Uliza upatikanaji wa bidhaa yoyote kupitia WhatsApp.</p>
+    <!-- PICHA: kila kadi inaweza kupata picha ya bidhaa badala ya aikoni -->
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-5 gap-4">
+      <a data-wa href="https://wa.me/255673639979" class="card text-center hover:border-brand transition"><div class="text-4xl mb-3" aria-hidden="true">🤒</div><span class="font-semibold">Homa na Maumivu</span></a>
+      <a data-wa href="https://wa.me/255673639979" class="card text-center hover:border-brand transition"><div class="text-4xl mb-3" aria-hidden="true">🍊</div><span class="font-semibold">Vitamini na Virutubisho</span></a>
+      <a data-wa href="https://wa.me/255673639979" class="card text-center hover:border-brand transition"><div class="text-4xl mb-3" aria-hidden="true">🍼</div><span class="font-semibold">Huduma ya Watoto</span></a>
+      <a data-wa href="https://wa.me/255673639979" class="card text-center hover:border-brand transition"><div class="text-4xl mb-3" aria-hidden="true">🧴</div><span class="font-semibold">Huduma ya Ngozi</span></a>
+      <a data-wa href="https://wa.me/255673639979" class="card text-center hover:border-brand transition col-span-2 lg:col-span-1"><div class="text-4xl mb-3" aria-hidden="true">🩹</div><span class="font-semibold">Huduma ya Kwanza</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 6. KWA NINI SISI ========== -->
+<section id="kwa-nini-sisi" class="sec bg-mint">
+  <div class="wrap">
+    <h2 class="h2">Kwa nini Amani Medical Centre</h2>
+    <ul class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <li class="card"><b class="text-brand text-lg">Mfamasia mwenye leseni</b><p class="mt-1">Unahudumiwa na mtaalamu aliyesajiliwa.</p></li>
+      <li class="card"><b class="text-brand text-lg">Dawa halali na asili</b><p class="mt-1">Dawa zote ni halali na asili.</p></li>
+      <li class="card"><b class="text-brand text-lg">Bei nafuu</b><p class="mt-1">Huduma bora kwa bei inayofikika kwa familia.</p></li>
+      <li class="card"><b class="text-brand text-lg">Ushauri bure</b><p class="mt-1">Uliza swali lolote kuhusu dawa, bila gharama.</p></li>
+      <li class="card"><b class="text-brand text-lg">Delivery ndani ya Dodoma</b><p class="mt-1">Oda kupitia WhatsApp, dawa zinakufikia nyumbani.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== 7. ULIZA UPATIKANAJI WA DAWA ========== -->
+<section class="sec">
+  <div class="wrap max-w-2xl text-center">
+    <h2 class="h2">Uliza upatikanaji wa dawa</h2>
+    <p class="mt-3 text-ink/75">Andika jina la dawa, tutakujibu WhatsApp.</p>
+    <form id="askForm" class="mt-8 flex flex-col sm:flex-row gap-3" novalidate>
+      <label for="drugName" class="sr-only">Jina la dawa</label>
+      <input id="drugName" type="text" placeholder="Mfano: Paracetamol 500mg" autocomplete="off" class="flex-1 min-h-[52px] px-5 rounded-full border-2 border-brand/30 text-base focus:border-brand">
+      <button type="submit" class="btn btn-cta">Uliza kwa WhatsApp</button>
+    </form>
+    <p id="askErr" class="hidden mt-3 text-base text-ink font-medium" role="alert">Tafadhali andika jina la dawa kwanza.</p>
+  </div>
+</section>
+
+<!-- ========== 8. MAONI YA WATEJA (MIFANO - BADILISHA) ========== -->
+<section class="sec bg-mint">
+  <div class="wrap">
+    <h2 class="h2">Wateja wanasemaje</h2>
+    <p class="mt-2 text-sm text-ink/60">[Maoni haya ni mifano tu. Yabadilishe na maoni halisi ya wateja wako.]</p>
+    <div class="mt-8 grid md:grid-cols-3 gap-5">
+      <figure class="card"><blockquote>"Nimehudumiwa haraka na nimeelekezwa jinsi ya kutumia dawa."</blockquote><figcaption class="mt-4 font-semibold text-brand">[Jina la mteja], Dodoma</figcaption></figure>
+      <figure class="card"><blockquote>"Niliagiza WhatsApp, dawa zikaletwa nyumbani."</blockquote><figcaption class="mt-4 font-semibold text-brand">[Jina la mteja], Dodoma</figcaption></figure>
+      <figure class="card"><blockquote>"Mfamasia anasikiliza na kujibu maswali yangu yote."</blockquote><figcaption class="mt-4 font-semibold text-brand">[Jina la mteja], Dodoma</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 9. MAHALI ========== -->
+<section id="mahali" class="sec">
+  <div class="wrap grid lg:grid-cols-2 gap-8">
+    <div>
+      <h2 class="h2">Tupo hapa</h2>
+      <p class="mt-3 text-lg">Chako ni Chako, Dodoma</p>
+      <a id="dirBtn" href="https://www.google.com/maps/search/?api=1&query=Chako+ni+Chako+Dodoma" target="_blank" rel="noopener" class="btn btn-cta mt-6">Pata Maelekezo</a>
+      <h3 class="font-bold text-xl mt-10 mb-2">Saa za Kazi</h3>
+      <ul class="space-y-1">
+        <li><b>Jumatatu - Alhamisi:</b> 7:00 AM - 8:00 PM</li>
+        <li><b>Ijumaa:</b> 7:00 AM - 5:00 PM</li>
+        <li><b>Jumamosi na Jumapili:</b> <span class="bg-cta/20 px-1 rounded">[WEKA SAA AU "IMEFUNGWA"]</span></li>
+      </ul>
+    </div>
+    <!-- RAMANI: badilisha div hii na iframe ya Google Maps (Share > Embed a map) -->
+    <div role="img" aria-label="Nafasi ya ramani ya Google Maps" class="min-h-[280px] rounded-3xl bg-mint border-2 border-dashed border-brand/30 flex items-center justify-center text-brand/60 text-center p-6">
+      [Weka iframe ya Google Maps hapa]
+    </div>
+  </div>
+</section>
+
+<!-- ========== 10. MASWALI (FAQ) ========== -->
+<section id="maswali" class="sec bg-mint">
+  <div class="wrap max-w-3xl">
+    <h2 class="h2">Maswali yanayoulizwa mara nyingi</h2>
+    <div class="mt-8 space-y-3">
+      <details class="card !p-0 group"><summary class="cursor-pointer min-h-[56px] flex items-center px-6 font-semibold">Mnapeleka dawa nyumbani?</summary><p class="px-6 pb-5">Ndiyo, tunapeleka ndani ya Dodoma. Oda hufanywa kupitia WhatsApp.</p></details>
+      <details class="card !p-0"><summary class="cursor-pointer min-h-[56px] flex items-center px-6 font-semibold">Mnapokea bima?</summary><p class="px-6 pb-5">Tuulize kupitia WhatsApp au simu kuthibitisha bima inayokubalika. [Weka orodha ya bima hapa]</p></details>
+      <details class="card !p-0"><summary class="cursor-pointer min-h-[56px] flex items-center px-6 font-semibold">Nahitaji cheti cha daktari?</summary><p class="px-6 pb-5">Dawa za maagizo ya daktari huhitaji cheti au maelekezo ya daktari. Dawa za kawaida hazihitaji. Mfamasia atakueleza.</p></details>
+      <details class="card !p-0"><summary class="cursor-pointer min-h-[56px] flex items-center px-6 font-semibold">Saa za kazi ni zipi?</summary><p class="px-6 pb-5">Jumatatu hadi Alhamisi: 7:00 AM - 8:00 PM. Ijumaa: 7:00 AM - 5:00 PM. Jumamosi na Jumapili: [WEKA SAA AU "IMEFUNGWA"].</p></details>
+      <details class="card !p-0"><summary class="cursor-pointer min-h-[56px] flex items-center px-6 font-semibold">Jinsi ya kuagiza?</summary><p class="px-6 pb-5">Tutumie ujumbe WhatsApp na jina la dawa na mahali ulipo Dodoma. Tutakujibu na kupanga delivery.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 11. WITO WA MWISHO ========== -->
+<section class="sec bg-brand text-white text-center">
+  <div class="wrap">
+    <h2 class="text-3xl sm:text-5xl font-bold tracking-tight">Una swali kuhusu dawa? Tuulize sasa</h2>
+    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+      <a data-wa href="https://wa.me/255673639979" class="btn btn-cta text-lg">Wasiliana WhatsApp</a>
+      <a data-tel href="tel:+255673639979" class="btn bg-white text-brand text-lg">Tupigie Sasa</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ========== 12. FOOTER ========== -->
+<footer class="bg-ink text-white/90 px-5 py-12 pb-28">
+  <div class="wrap grid md:grid-cols-3 gap-8 text-base">
+    <div>
+      <p class="font-bold text-lg text-white">Amani Medical Centre</p>
+      <p class="mt-2">Reg. No: XXXX-XXXX</p> <!-- Weka namba halisi ya usajili -->
+    </div>
+    <div>
+      <p><a data-tel href="tel:+255673639979" class="underline min-h-[44px] inline-flex items-center">+255 673 639 979</a></p>
+      <p>Chako ni Chako, Dodoma</p>
+    </div>
+    <div class="flex flex-wrap gap-4 items-start">
+      <!-- MITANDAO: weka link halisi badala ya "#" -->
+      <a href="#" class="underline min-h-[44px] inline-flex items-center">Facebook [link]</a>
+      <a href="#" class="underline min-h-[44px] inline-flex items-center">Instagram [link]</a>
+    </div>
+  </div>
+  <p class="wrap mt-8 pt-6 border-t border-white/20 text-sm sm:text-base">Tafadhali usitumie dawa bila ushauri wa mtaalamu wa afya.</p>
+</footer>
+
+<!-- Floating WhatsApp button -->
+<a data-wa href="https://wa.me/255673639979" aria-label="Wasiliana nasi WhatsApp" class="fixed bottom-5 right-5 z-50 flex items-center gap-2 h-14 px-5 rounded-full bg-cta text-ink font-semibold shadow-lg active:scale-95">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.300 1.200-1.800 1.200-.5.100-1.100.100-3.500-.8-3-1.300-4.900-4.400-5-4.600-.2-.2-1.200-1.600-1.200-3s.7-2.100 1-2.400c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.2.1.400 0 .5l-.4.600-.3.400c-.1.100-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.100 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.9-1c.2-.3.400-.2.700-.1l1.900.9c.3.100.5.200.6.300.1.200.1.800-.1 1.400Z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<script>
+/* ========== MIPANGILIO: badilisha namba na ujumbe hapa tu ========== */
+const CONFIG = {
+  phone: '255673639979',                                   // namba bila "+"
+  greeting: 'Habari Amani Medical Centre, naomba msaada kuhusu dawa.'
+};
+const waUrl = (msg) => `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(msg)}`;
+
+// Weka link zote za WhatsApp na simu kutoka CONFIG
+document.querySelectorAll('[data-wa]').forEach(a => { a.href = waUrl(CONFIG.greeting); a.target = '_blank'; a.rel = 'noopener'; });
+document.querySelectorAll('[data-tel]').forEach(a => { a.href = `tel:+${CONFIG.phone}`; });
+
+// Menyu ya hamburger
+const btn = document.getElementById('menuBtn'), nav = document.getElementById('mobileNav');
+btn.addEventListener('click', () => {
+  const open = nav.classList.toggle('hidden') === false;
+  btn.setAttribute('aria-expanded', open);
+});
+nav.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', () => { nav.classList.add('hidden'); btn.setAttribute('aria-expanded', false); }));
+
+// Kisanduku cha upatikanaji wa dawa -> WhatsApp
+document.getElementById('askForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('drugName').value.trim();
+  const err = document.getElementById('askErr');
+  if (!name) { err.classList.remove('hidden'); return; }
+  err.classList.add('hidden');
+  window.open(waUrl(`Habari Amani Medical Centre, naomba kuuliza kama ${name} inapatikana.`), '_blank', 'noopener');
+});
+
+// Fade-in nyepesi
+const io = new IntersectionObserver((entries) => entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); } }), { threshold: .1 });
+document.querySelectorAll('.fade').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
